@@ -197,7 +197,7 @@ function Contact() {
                   <option value="mariage">Mariage</option>
                   <option value="fiancailles">Fiançailles</option>
                   <option value="anniversaire">Anniversaire</option>
-                  <option value="bapteme">Baptême</option>
+                  <option value="babyshower">Baby Shower</option>
                   <option value="corporate">Événement corporate</option>
                   <option value="autre">Autre</option>
                 </select>

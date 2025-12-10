@@ -1,7 +1,7 @@
 import './Home.css'
 
 // Page d'accueil avec hero video en plein ecran
-// Affiche le logo, le nom de la marque et le slogan
+// Affiche le logo complet de la marque
 function Home() {
   return (
     <main className="home">
@@ -23,35 +23,15 @@ function Home() {
           <div className="hero__overlay"></div>
         </div>
 
-        {/* Contenu central du hero */}
+        {/* Contenu central du hero - Logo complet */}
         <div className="hero__content">
-          {/* Logo coquillage en blanc */}
-          <div className="hero__logo">
-            <svg 
-              className="hero__logo-svg"
-              viewBox="0 0 786.56 917.99" 
-              xmlns="http://www.w3.org/2000/svg"
-              aria-label="Logo Maison Perla - Coquillage"
-            >
-              {/* Coquillage simplifie - utilise le fichier SVG original avec fill blanc */}
-              <use href="/assets/coquillage.svg#Calque_1-2" fill="white" />
-            </svg>
-            {/* Image de secours si le SVG inline ne fonctionne pas */}
-            <img 
-              src="/assets/coquillage.svg" 
-              alt="Logo Maison Perla" 
-              className="hero__logo-img"
-            />
-          </div>
-
-          {/* Texte de la marque */}
-          <div className="hero__text">
-            <h1 className="hero__title">
-              <span className="hero__title-script">Maison</span>
-              <span className="hero__title-main">Perla</span>
-            </h1>
-            <p className="hero__subtitle">EVENT PLANNER</p>
-          </div>
+          <img 
+            src="/assets/logo-hero.svg" 
+            alt="Maison Perla - Event Planner" 
+            className="hero__logo-complete"
+          />
+          {/* Sous-titre EVENT PLANNER */}
+          <p className="hero__subtitle">EVENT PLANNER</p>
         </div>
       </section>
     </main>
