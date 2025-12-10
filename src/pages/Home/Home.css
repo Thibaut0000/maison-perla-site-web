@@ -1,0 +1,213 @@
+/* 
+ * Styles de la page d'accueil
+ * Hero section avec video en arriere-plan et filtre rose
+ */
+
+.home {
+  width: 100%;
+}
+
+/* Section Hero plein ecran */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Conteneur de la video */
+.hero__video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Video en arriere-plan */
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Filtre rose par dessus la video */
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primary-overlay);
+  z-index: 2;
+}
+
+/* Contenu central du hero */
+.hero__content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+/* Logo coquillage */
+.hero__logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Cache le SVG inline par defaut, utilise l'image */
+.hero__logo-svg {
+  display: none;
+}
+
+/* Image du logo avec filtre pour le rendre blanc */
+.hero__logo-img {
+  width: 100%;
+  height: auto;
+  /* Filtre pour rendre le SVG blanc */
+  filter: brightness(0) invert(1);
+}
+
+/* Conteneur du texte */
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* Titre principal */
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+/* Partie "Maison" en script */
+.hero__title-script {
+  font-family: var(--font-script);
+  font-size: 4rem;
+  font-weight: 400;
+  color: var(--color-white);
+  letter-spacing: 2px;
+  margin-bottom: -0.5rem;
+}
+
+/* Partie "Perla" en serif */
+.hero__title-main {
+  font-family: var(--font-serif);
+  font-size: 7rem;
+  font-weight: 500;
+  color: var(--color-cream);
+  letter-spacing: 4px;
+  text-transform: lowercase;
+}
+
+/* Sous-titre "EVENT PLANNER" */
+.hero__subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--color-cream);
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  margin-top: var(--spacing-sm);
+}
+
+/* Animations d'entree */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Application des animations */
+.hero__logo {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.hero__title-script {
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.hero__title-main {
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.hero__subtitle {
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+/* Styles responsive pour tablettes */
+@media screen and (max-width: 768px) {
+  .hero__logo {
+    width: 100px;
+  }
+
+  .hero__title-script {
+    font-size: 3rem;
+  }
+
+  .hero__title-main {
+    font-size: 5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+    letter-spacing: 6px;
+  }
+}
+
+/* Styles responsive pour mobiles */
+@media screen and (max-width: 480px) {
+  .hero {
+    min-height: 100vh;
+    min-height: 100svh; /* Utilise la hauteur visible sur mobile */
+  }
+
+  .hero__logo {
+    width: 80px;
+  }
+
+  .hero__title-script {
+    font-size: 2.5rem;
+  }
+
+  .hero__title-main {
+    font-size: 4rem;
+  }
+
+  .hero__subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+  }
+}

@@ -1,0 +1,147 @@
+/* 
+ * Styles du composant Navbar
+ * Navigation principale du site avec support responsive
+ */
+
+.navbar {
+  width: 100%;
+  background-color: var(--color-cream);
+  padding: var(--spacing-sm) 0;
+}
+
+.navbar__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Menu de navigation */
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.navbar__item {
+  position: relative;
+}
+
+.navbar__link {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--color-text-dark);
+  letter-spacing: 0.5px;
+  padding: var(--spacing-xs) 0;
+  transition: opacity var(--transition-fast);
+  position: relative;
+}
+
+/* Effet de survol sur les liens */
+.navbar__link:hover {
+  opacity: 0.7;
+}
+
+/* Style pour le lien actif */
+.navbar__link--active {
+  font-weight: 600;
+}
+
+/* Soulignement anime au survol */
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-text-dark);
+  transition: width var(--transition-normal);
+}
+
+.navbar__link:hover::after,
+.navbar__link--active::after {
+  width: 100%;
+}
+
+/* Bouton hamburger - cache sur desktop */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.navbar__hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text-dark);
+  transition: all var(--transition-normal);
+  transform-origin: center;
+}
+
+/* Animation du hamburger quand le menu est ouvert */
+.navbar__hamburger--active .navbar__hamburger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.navbar__hamburger--active .navbar__hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__hamburger--active .navbar__hamburger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Styles responsive pour tablettes et mobiles */
+@media screen and (max-width: 768px) {
+  .navbar__container {
+    justify-content: flex-end;
+  }
+
+  /* Afficher le bouton hamburger */
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  /* Menu mobile en plein ecran */
+  .navbar__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-lg);
+    background-color: var(--color-cream);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    z-index: 1000;
+  }
+
+  /* Menu mobile ouvert */
+  .navbar__menu--open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar__link {
+    font-size: 1.5rem;
+  }
+}
+
+/* Ajustements pour petits ecrans */
+@media screen and (max-width: 480px) {
+  .navbar__container {
+    padding: 0 var(--spacing-sm);
+  }
+}

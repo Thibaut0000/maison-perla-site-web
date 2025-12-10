@@ -1,0 +1,111 @@
+/* 
+ * Styles du composant SocialLinks
+ * Liens vers les reseaux sociaux avec animations au survol
+ */
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+.social-links__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  border-radius: 12px;
+  background-color: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all var(--transition-normal);
+  min-width: 80px;
+}
+
+.social-links__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(244, 45, 122, 0.15);
+}
+
+.social-links__item:hover .social-links__icon {
+  color: var(--color-primary);
+}
+
+/* Style pour les liens desactives */
+.social-links__item--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.social-links__item--disabled:hover {
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.social-links__item--disabled:hover .social-links__icon {
+  color: var(--color-text-dark);
+}
+
+.social-links__icon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-text-dark);
+  transition: color var(--transition-normal);
+}
+
+.social-links__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.social-links__name {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Couleurs specifiques au survol pour chaque reseau */
+.social-links__item:nth-child(1):hover .social-links__icon {
+  /* Instagram - gradient simule avec une couleur */
+  color: #E4405F;
+}
+
+.social-links__item:nth-child(2):hover .social-links__icon {
+  /* TikTok */
+  color: #000000;
+}
+
+.social-links__item:nth-child(3):hover .social-links__icon {
+  /* Pinterest */
+  color: #E60023;
+}
+
+.social-links__item:nth-child(4):hover .social-links__icon {
+  /* Facebook */
+  color: #1877F2;
+}
+
+/* Responsive */
+@media screen and (max-width: 480px) {
+  .social-links {
+    gap: var(--spacing-sm);
+  }
+
+  .social-links__item {
+    min-width: 70px;
+    padding: var(--spacing-xs);
+  }
+
+  .social-links__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .social-links__name {
+    font-size: 0.65rem;
+  }
+}

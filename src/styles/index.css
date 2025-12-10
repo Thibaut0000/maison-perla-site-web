@@ -1,0 +1,97 @@
+/* 
+ * Fichier de styles globaux et variables CSS
+ * Contient les couleurs de la marque, les polices et les reset de base
+ */
+
+/* Variables CSS globales */
+:root {
+  /* Couleurs principales de la marque */
+  --color-primary: #F42D7A;           /* Rose principal */
+  --color-cream: #FBF7EE;             /* Beige creme pour navbar et sections claires */
+  --color-white: #FFFFFF;             /* Blanc */
+  --color-text-dark: #304254;         /* Texte fonce pour navigation */
+  
+  /* Couleurs avec transparence pour le filtre video */
+  --color-primary-overlay: rgba(244, 45, 122, 0.75);
+  
+  /* Polices */
+  --font-script: 'Great Vibes', cursive;                    /* Pour "Maison" */
+  --font-serif: 'Cormorant Garamond', serif;               /* Pour "Perla" */
+  --font-sans: 'Montserrat', sans-serif;                   /* Pour "EVENT PLANNER" et navigation */
+  
+  /* Espacements */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 5rem;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Breakpoints pour le responsive */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-large: 1200px;
+}
+
+/* Reset CSS de base */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-dark);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Suppression des styles par defaut des liens */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Suppression des styles par defaut des listes */
+ul, ol {
+  list-style: none;
+}
+
+/* Images responsives par defaut */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Suppression du outline par defaut sur les boutons */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Conteneur principal pour centrer le contenu */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
