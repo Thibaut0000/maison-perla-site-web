@@ -45,7 +45,7 @@ function Services() {
         <main className="services">
             <div className="services__background">
                 <img
-                    src="/assets/banquet.png"
+                    src="/assets/jardin.png"
                     alt=""
                     className="services__background-img"
                 />
