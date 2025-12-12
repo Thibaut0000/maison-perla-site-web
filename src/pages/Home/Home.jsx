@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Home.css'
 
 // Page d'accueil avec hero video en plein ecran
@@ -9,11 +10,11 @@ function Home() {
       <section className="hero">
         {/* Conteneur de la video avec filtre rose */}
         <div className="hero__video-container">
-          <video 
+          <video
             className="hero__video"
-            autoPlay 
-            muted 
-            loop 
+            autoPlay
+            muted
+            loop
             playsInline
           >
             <source src="/assets/hero-video.mp4" type="video/mp4" />
@@ -27,9 +28,9 @@ function Home() {
         <div className="hero__content">
           {/* Logo coquillage en blanc */}
           <div className="hero__logo">
-            <svg 
+            <svg
               className="hero__logo-svg"
-              viewBox="0 0 786.56 917.99" 
+              viewBox="0 0 786.56 917.99"
               xmlns="http://www.w3.org/2000/svg"
               aria-label="Logo Maison Perla - Coquillage"
             >
@@ -37,9 +38,9 @@ function Home() {
               <use href="/assets/coquillage.svg#Calque_1-2" fill="white" />
             </svg>
             {/* Image de secours si le SVG inline ne fonctionne pas */}
-            <img 
-              src="/assets/coquillage.svg" 
-              alt="Logo Maison Perla" 
+            <img
+              src="/assets/coquillage.svg"
+              alt="Logo Maison Perla"
               className="hero__logo-img"
             />
           </div>
@@ -53,6 +54,31 @@ function Home() {
             <p className="hero__subtitle">EVENT PLANNER</p>
           </div>
         </div>
+      </section>
+
+      {/* Section Nos Services */}
+      <section className="home__services">
+        {/* Carte Papeterie - Gauche */}
+        <Link to="/papeterie" className="home__service-card home__service-card--papeterie">
+          <div className="service-card__content">
+            <h2 className="service-card__title">
+              <span className="service-card__subtitle">Service</span>
+              Papeterie
+            </h2>
+            <div className="service-card__arrow">→</div>
+          </div>
+        </Link>
+
+        {/* Carte Organisation - Droite */}
+        <Link to="/organisation" className="home__service-card home__service-card--organisation">
+          <div className="service-card__content">
+            <h2 className="service-card__title">
+              <span className="service-card__subtitle">Service</span>
+              Organisation de Mariage
+            </h2>
+            <div className="service-card__arrow">→</div>
+          </div>
+        </Link>
       </section>
     </main>
   )

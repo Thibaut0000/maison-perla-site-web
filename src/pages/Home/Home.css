@@ -132,6 +132,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -142,6 +143,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -191,7 +193,8 @@
 @media screen and (max-width: 480px) {
   .hero {
     min-height: 100vh;
-    min-height: 100svh; /* Utilise la hauteur visible sur mobile */
+    min-height: 100svh;
+    /* Utilise la hauteur visible sur mobile */
   }
 
   .hero__logo {
@@ -209,5 +212,120 @@
   .hero__subtitle {
     font-size: 0.85rem;
     letter-spacing: 4px;
+  }
+}
+
+/* Section Services (Papeterie & Organisation) */
+.home__services {
+  display: flex;
+  width: 100%;
+  min-height: 60vh;
+  /* Hauteur de la section */
+}
+
+.home__service-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-xxl);
+  color: var(--color-white);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+/* Service Papeterie - Fond Bleu Foncé */
+.home__service-card--papeterie {
+  background-color: #1B2A3B;
+  /* Bleu nuit élégant */
+}
+
+/* Service Organisation - Fond Rose */
+.home__service-card--organisation {
+  background-color: var(--color-primary);
+  /* Rose du logo */
+}
+
+/* Contenu de la carte */
+.service-card__content {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
+.service-card__title {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.service-card__subtitle {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.service-card__arrow {
+  font-size: 2rem;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.4s ease;
+}
+
+/* Animations au survol */
+.home__service-card:hover .service-card__content {
+  transform: scale(1.05);
+  /* Zoom leger sur le texte */
+}
+
+.home__service-card:hover .service-card__arrow {
+  opacity: 1;
+  transform: translateX(0);
+  /* Fleche apparait */
+}
+
+/* Overlay pour effet de brillance/assombrissement au survol */
+.home__service-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.home__service-card:hover::after {
+  opacity: 1;
+}
+
+/* Responsive pour mobile */
+@media screen and (max-width: 768px) {
+  .home__services {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .home__service-card {
+    min-height: 50vh;
+    padding: var(--spacing-xl);
+  }
+
+  .service-card__title {
+    font-size: 2.2rem;
   }
 }
