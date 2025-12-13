@@ -1,11 +1,13 @@
-/* Styles de la page papeterie */
 .papeterie {
-    background-color: var(--color-cream);
     min-height: 100vh;
     padding-top: 80px;
-    /* Espace pour la navbar */
+    background-color: var(--color-white);
+    padding-bottom: 0;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.8s ease-out;
 }
 
 .papeterie__background {
@@ -38,17 +40,16 @@
 
 .papeterie__header {
     text-align: center;
-    padding: 4rem 0;
+    padding: var(--spacing-xl) 0;
     position: relative;
     z-index: 1;
+    flex-shrink: 0;
 }
-
 
 .papeterie__title {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: var(--spacing-md);
 }
 
 .papeterie__title-script {
@@ -69,53 +70,211 @@
     letter-spacing: normal;
 }
 
-.papeterie__content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem 4rem;
+/* Accordion Container */
+.papeterie__accordion {
     display: flex;
-    flex-direction: column;
-    gap: 4rem;
+    flex: 1;
+    /* Fill remaining height */
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md) var(--spacing-xl);
+    gap: var(--spacing-sm);
     position: relative;
     z-index: 1;
+    min-height: 500px;
+    /* Minimum height for content */
 }
 
-.papeterie__section {
-    text-align: center;
-    padding: 3rem;
+/* Panel Item */
+.papeterie__panel {
+    flex: 1;
     background-color: var(--color-white);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.papeterie__section:hover {
-    transform: translateY(-5px);
+/* Active State (Expanded) */
+.papeterie__panel.active {
+    flex: 5;
+    background-color: var(--color-white);
+    cursor: default;
+    border: 2px solid var(--service-color);
 }
 
-.papeterie__section--alt {
-    background-color: #fff5f8;
-    /* Tres leger rose */
+/* Inactive State (Squeezed styling) */
+.papeterie__panel.inactive {
+    flex: 0.5;
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
-.papeterie__subtitle {
+.papeterie__panel:hover:not(.active) {
+    background-color: #fbfbfb;
+}
+
+/* Overlay for coloring/tinting */
+.papeterie__panel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--service-color);
+    opacity: 0.05;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.papeterie__panel.active .papeterie__panel-overlay {
+    opacity: 0.02;
+}
+
+.papeterie__panel:hover .papeterie__panel-overlay {
+    opacity: 0.2;
+}
+
+/* Content */
+.papeterie__panel-content {
+    padding: var(--spacing-xl);
+    text-align: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.papeterie__panel-title {
     font-family: var(--font-serif);
     font-size: 2.5rem;
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
+    color: var(--service-color);
+    margin-bottom: var(--spacing-sm);
+    transition: transform 0.5s ease, font-size 0.5s ease;
+    white-space: nowrap;
 }
 
-.papeterie__text {
+.papeterie__panel-subtitle {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-md);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.papeterie__panel-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Show details when active */
+.papeterie__panel.active .papeterie__panel-details {
+    max-height: 500px;
+    /* Enough to fit content */
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: var(--spacing-md);
+}
+
+.papeterie__panel-desc {
     font-family: var(--font-sans);
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.6;
     color: var(--color-text-dark);
-    max-width: 800px;
-    margin: 0 auto;
+    margin-bottom: var(--spacing-md);
 }
 
-/* Animations */
-@keyframes fadeInUp {
+.papeterie__panel-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+}
+
+.papeterie__panel-list li {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--color-text-dark);
+}
+
+.papeterie__panel-list li::before {
+    content: "•";
+    color: var(--service-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Rotate title for squeezed items styling (optional, but looks good) */
+.papeterie__panel.inactive .papeterie__panel-title {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-size: 2rem;
+    margin: 0;
+}
+
+.papeterie__panel.inactive .papeterie__panel-subtitle,
+.papeterie__panel.inactive .papeterie__panel-details {
+    display: none;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .papeterie__accordion {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+    }
+
+    .papeterie__panel {
+        min-height: 80px;
+        flex: none;
+        width: 100%;
+    }
+
+    .papeterie__panel.active {
+        flex: none;
+        min-height: 400px;
+    }
+
+    .papeterie__panel.inactive {
+        flex: none;
+        min-height: 60px;
+    }
+
+    .papeterie__panel.inactive .papeterie__panel-title {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 1.5rem;
+    }
+}
+@keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -125,21 +284,4 @@
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.papeterie__section {
-    animation: fadeInUp 0.8s ease-out forwards;
-    opacity: 0;
-}
-
-.papeterie__section:nth-child(1) {
-    animation-delay: 0.2s;
-}
-
-.papeterie__section:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-.papeterie__section:nth-child(3) {
-    animation-delay: 0.6s;
 }

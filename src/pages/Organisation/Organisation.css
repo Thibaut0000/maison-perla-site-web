@@ -1,14 +1,13 @@
-/* Styles de la page Organisation - Accordéon */
 .organisation {
     min-height: 100vh;
     padding-top: 80px;
     background-color: var(--color-white);
     padding-bottom: 0;
-    /* Remove padding as accordion can take full height */
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    animation: fadeIn 0.8s ease-out;
 }
 
 .organisation__background {
@@ -141,7 +140,7 @@
 }
 
 .organisation__panel:hover .organisation__panel-overlay {
-    opacity: 0.1;
+    opacity: 0.2;
 }
 
 /* Content */
@@ -273,5 +272,16 @@
         writing-mode: horizontal-tb;
         transform: none;
         font-size: 1.5rem;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
