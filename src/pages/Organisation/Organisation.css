@@ -145,7 +145,7 @@
 
 /* Content */
 .organisation__panel-content {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-md);
     text-align: center;
     width: 100%;
     position: relative;
@@ -185,12 +185,39 @@
     transform: translateY(20px);
     transition: all 0.5s ease;
     width: 100%;
-    max-width: 600px;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-xl);
+    padding: 0 var(--spacing-md);
+}
+
+.organisation__panel-img-container {
+    width: 45%;
+    max-width: 500px;
+    justify-content: center;
+}
+
+.organisation__panel-img {
+    width: 100%;
+    margin-top: 0;
+    border-radius: 25px;
+    object-fit: cover;
+    padding: var(--spacing-sm);
+}
+
+.organisation__panel-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
 /* Show details when active */
 .organisation__panel.active .organisation__panel-details {
-    max-height: 500px;
+    max-height: 1200px;
     /* Enough to fit content */
     opacity: 1;
     transform: translateY(0);
@@ -273,7 +300,24 @@
         transform: none;
         font-size: 1.5rem;
     }
+
+    .organisation__panel.active .organisation__panel-details {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+
+    .organisation__panel-text {
+        align-items: center;
+        text-align: center;
+    }
+
+    .organisation__panel-img {
+        width: 100%;
+        margin-bottom: var(--spacing-md);
+    }
 }
+
 @keyframes fadeIn {
     from {
         opacity: 0;
