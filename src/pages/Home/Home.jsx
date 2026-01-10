@@ -6,7 +6,7 @@ function Home() {
   return (
     <main className="home">
       {/* Section hero avec video en arriere-plan */}
-      <section className="hero">
+      <section className="hero" style={{ backgroundColor: '#F42D7A' }}>
         {/* Conteneur de la video avec filtre rose */}
         <div className="hero__video-container">
           <video 
