@@ -25,32 +25,13 @@ function Home() {
 
         {/* Contenu central du hero */}
         <div className="hero__content">
-          {/* Logo coquillage en blanc */}
+          {/* Logo blanc */}
           <div className="hero__logo">
-            <svg 
-              className="hero__logo-svg"
-              viewBox="0 0 786.56 917.99" 
-              xmlns="http://www.w3.org/2000/svg"
-              aria-label="Logo Maison Perla - Coquillage"
-            >
-              {/* Coquillage simplifie - utilise le fichier SVG original avec fill blanc */}
-              <use href="/assets/coquillage.svg#Calque_1-2" fill="white" />
-            </svg>
-            {/* Image de secours si le SVG inline ne fonctionne pas */}
             <img 
-              src="/assets/coquillage.svg" 
+              src="/assets/logoblancMain.png" 
               alt="Logo Maison Perla" 
               className="hero__logo-img"
             />
-          </div>
-
-          {/* Texte de la marque */}
-          <div className="hero__text">
-            <h1 className="hero__title">
-              <span className="hero__title-script">Maison</span>
-              <span className="hero__title-main">Perla</span>
-            </h1>
-            <p className="hero__subtitle">EVENT PLANNER</p>
           </div>
         </div>
       </section>
