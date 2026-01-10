@@ -9,52 +9,48 @@ function Papeterie() {
         {
             id: 1,
             title: "Papeterie",
-            subtitle: "Sous Titre",
-            description: "Faire-part & Save the Date (papier et digital) Menus, marque-places, plans de table Cartes de remerciement et papeterie d’accueil (livrets, panneaux de bienvenue, etc.) Impression sur papiers texturés, dorures à chaud, sceaux de cire, rubans en soie naturelle",
+            subtitle: "Nous prendrons soin de chaque détail, de la conception à la réalisation, pour que votre papeterie reflète parfaitement l'essence de votre mariage.",
             details: [
-                "Détails 1",
-                "Détails 2",
-                "Détails 3",
-                "Détails 4"
+                "Faire-part & Save the Date (papier et digital)",
+                "Menus, marque-places, plans de table",
+                "Cartes de remerciement et papeterie d’accueil (livrets, panneaux de bienvenue, etc.)",
+                "Impression sur papiers texturés, dorures à chaud, sceaux de cire, rubans en soie naturelle"
             ],
             color: "#040057" // Bleu
         },
         {
             id: 2,
             title: "L’Art de recevoir",
-            subtitle: "Sous Titre",
-            description: "Sélection du linge de table, vaisselle et verrerie Création d’un concept harmonieux entre fleurs, lumière et papeterie Installation complète le jour J Possibilité de moodboard personnalisé avant validation finale",
+            subtitle: "Une harmonie parfaite entre arts de la table et mise en lumière pour une réception d'exception.",
             details: [
-                "Détails 1",
-                "Détails 2",
-                "Détails 3",
-                "Détails 4"
+                "Sélection du linge de table, vaisselle et verrerie",
+                "Création d’un concept harmonieux entre fleurs, lumière et papeterie",
+                "Installation complète le jour J",
+                "Possibilité de moodboard personnalisé avant validation finale"
             ],
             color: "#f174a4" // Pink
         },
         {
             id: 3,
             title: "Décoration",
-            subtitle: "Sous Titre",
-            description: "Création d’arches, centres de table, compositions murales Décoration de cérémonie, réception et tables d’honneur Location ou création sur mesure d’éléments décoratifs Palette de couleurs et matières définie selon votre univers",
+            subtitle: "Une scénographie sur mesure qui transforme l'espace et sublime votre histoire.",
             details: [
-                "Détails 1",
-                "Détails 2",
-                "Détails 3",
-                "Détails 4"
+                "Création d’arches, centres de table, compositions murales",
+                "Décoration de cérémonie, réception et tables d’honneur",
+                "Location ou création sur mesure d’éléments décoratifs",
+                "Palette de couleurs et matières définie selon votre univers"
             ],
             color: "#fd5d69" // Coral/Red
         },
         {
             id: 4,
             title: "Accessoires",
-            subtitle: "Sous Titre",
-            description: "Accessoires personnalisés Signalétique sur mesure (bar à cocktails, livre d’or, cadeaux invités) Création de corners thématiques (coin photo, bar, espace détente) Éclairage doux et mise en valeur des espaces clés",
+            subtitle: "Les détails subtils et la signalétique qui apportent la touche finale à votre univers.",
             details: [
-                "Détails 1",
-                "Détails 2",
-                "Détails 3",
-                "Détails 4"
+                "Accessoires personnalisés",
+                "Signalétique sur mesure (bar à cocktails, livre d’or, cadeaux invités)",
+                "Création de corners thématiques (coin photo, bar, espace détente)",
+                "Éclairage doux et mise en valeur des espaces clés"
             ],
             color: "#f97e07" // orange
         }
@@ -95,7 +91,6 @@ function Papeterie() {
                             <h3 className="papeterie__panel-subtitle">{service.subtitle}</h3>
 
                             <div className="papeterie__panel-details">
-                                <p className="papeterie__panel-desc">{service.description}</p>
                                 <ul className="papeterie__panel-list">
                                     {service.details.map((item, index) => (
                                         <li key={index}>{item}</li>
