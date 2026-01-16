@@ -54,9 +54,11 @@
   transition: color var(--transition-normal);
 }
 
-.social-links__icon svg {
+.social-links__icon svg,
+.social-links__icon img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 
 .social-links__name {
@@ -87,6 +89,17 @@
 .social-links__item:nth-child(4):hover .social-links__icon {
   /* Facebook */
   color: #1877F2;
+}
+
+.social-links__item:nth-child(5) .social-links__icon img {
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all var(--transition-normal);
+}
+
+.social-links__item:nth-child(5):hover .social-links__icon img {
+  filter: none;
+  opacity: 1;
 }
 
 /* Responsive */

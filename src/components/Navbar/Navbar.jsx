@@ -22,7 +22,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar__container">
         {/* Bouton hamburger pour mobile */}
-        <button 
+        <button
           className={`navbar__hamburger ${isMenuOpen ? 'navbar__hamburger--active' : ''}`}
           onClick={toggleMenu}
           aria-label="Menu de navigation"
@@ -36,8 +36,8 @@ function Navbar() {
         {/* Liste des liens de navigation */}
         <ul className={`navbar__menu ${isMenuOpen ? 'navbar__menu--open' : ''}`}>
           <li className="navbar__item">
-            <NavLink 
-              to="/" 
+            <NavLink
+              to="/"
               className={({ isActive }) => `navbar__link ${isActive ? 'navbar__link--active' : ''}`}
               onClick={handleLinkClick}
             >
@@ -45,17 +45,8 @@ function Navbar() {
             </NavLink>
           </li>
           <li className="navbar__item">
-            <NavLink 
-              to="/nous" 
-              className={({ isActive }) => `navbar__link ${isActive ? 'navbar__link--active' : ''}`}
-              onClick={handleLinkClick}
-            >
-              Nous
-            </NavLink>
-          </li>
-          <li className="navbar__item">
-            <NavLink 
-              to="/services" 
+            <NavLink
+              to="/services"
               className={({ isActive }) => `navbar__link ${isActive ? 'navbar__link--active' : ''}`}
               onClick={handleLinkClick}
             >
@@ -63,8 +54,8 @@ function Navbar() {
             </NavLink>
           </li>
           <li className="navbar__item">
-            <NavLink 
-              to="/contact" 
+            <NavLink
+              to="/contact"
               className={({ isActive }) => `navbar__link ${isActive ? 'navbar__link--active' : ''}`}
               onClick={handleLinkClick}
             >

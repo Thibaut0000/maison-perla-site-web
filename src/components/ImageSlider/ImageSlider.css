@@ -1,0 +1,84 @@
+.image-slider {
+    position: relative;
+    width: 100%;
+    margin-top: var(--spacing-md);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.image-slider__container {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Hide scrollbar for Chrome/Safari/Opera */
+.image-slider__container::-webkit-scrollbar {
+    display: none;
+}
+
+.image-slider__item {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+    position: relative;
+}
+
+.image-slider__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Navigation Buttons */
+.image-slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--color-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-slider__btn:hover {
+    background-color: var(--color-white);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.image-slider__btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.image-slider__btn--prev {
+    left: 10px;
+}
+
+.image-slider__btn--next {
+    right: 10px;
+}
+
+/* Icons */
+.icon-arrow {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import ImageSlider from '../../components/ImageSlider/ImageSlider'
 import Testimonials from '../../components/Testimonials/Testimonials'
 import './Home.css'
 
@@ -8,6 +9,14 @@ import './Home.css'
 function Home() {
   const sectionsRef = useRef([])
   const navigate = useNavigate()
+
+  // Images pour le slider
+  const sliderImages = [
+    '/assets/photo1.png',
+    '/assets/photo2.png',
+    '/assets/photo3.png',
+    '/assets/photo4.png'
+  ]
 
   // Animation au scroll (identique à Services.jsx)
   useEffect(() => {
@@ -115,6 +124,9 @@ function Home() {
             {/* Sidebar Image */}
             <div className="founders-story__sidebar">
               <img src="/assets/Plage.png" alt="Notre Histoire" className="founders-story__image" />
+
+              {/* Slider d'images */}
+              <ImageSlider images={sliderImages} />
             </div>
 
             {/* Main Content */}

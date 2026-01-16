@@ -6,19 +6,26 @@
 /* Variables CSS globales */
 :root {
   /* Couleurs principales de la marque */
-  --color-primary: #F42D7A;           /* Rose principal */
-  --color-cream: #FBF7EE;             /* Beige creme pour navbar et sections claires */
-  --color-white: #FFFFFF;             /* Blanc */
-  --color-text-dark: #304254;         /* Texte fonce pour navigation */
-  
+  --color-primary: #A80A47;
+  /* Rose principal */
+  --color-cream: #FBF7EE;
+  /* Beige creme pour navbar et sections claires */
+  --color-white: #FFFFFF;
+  /* Blanc */
+  --color-text-dark: #304254;
+  /* Texte fonce pour navigation */
+
   /* Couleurs avec transparence pour le filtre video */
   --color-primary-overlay: rgba(244, 45, 122, 0.75);
-  
+
   /* Polices */
-  --font-script: 'Great Vibes', cursive;                    /* Pour "Maison" */
-  --font-serif: 'Cormorant Garamond', serif;               /* Pour "Perla" */
-  --font-sans: 'Montserrat', sans-serif;                   /* Pour "EVENT PLANNER" et navigation */
-  
+  --font-script: 'Great Vibes', cursive;
+  /* Pour "Maison" */
+  --font-serif: 'Cormorant Garamond', serif;
+  /* Pour "Perla" */
+  --font-sans: 'Montserrat', sans-serif;
+  /* Pour "EVENT PLANNER" et navigation */
+
   /* Espacements */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -26,12 +33,12 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-xxl: 5rem;
-  
+
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
-  
+
   /* Breakpoints pour le responsive */
   --breakpoint-mobile: 480px;
   --breakpoint-tablet: 768px;
@@ -69,12 +76,14 @@ a {
 }
 
 /* Suppression des styles par defaut des listes */
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
 /* Images responsives par defaut */
-img, video {
+img,
+video {
   max-width: 100%;
   height: auto;
   display: block;
