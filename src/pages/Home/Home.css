@@ -130,6 +130,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -140,6 +141,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -189,7 +191,8 @@
 @media screen and (max-width: 480px) {
   .hero {
     min-height: 100vh;
-    min-height: 100svh; /* Utilise la hauteur visible sur mobile */
+    min-height: 100svh;
+    /* Utilise la hauteur visible sur mobile */
   }
 
   .hero__logo {
@@ -207,5 +210,539 @@
   .hero__subtitle {
     font-size: 0.85rem;
     letter-spacing: 4px;
+  }
+}
+
+/* ===== SECTION FOUNDERS (NOUVEAU) ===== */
+.home-founders,
+.home-story {
+  padding: 100px 5%;
+  background: var(--color-white);
+
+  /* Initial state for animation */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.home-founders.animate-in,
+.home-story.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Staggered Animations for Founders Children --- */
+/* Initial state for children: hidden and moved down */
+.home-founders .founder-profile,
+.home-story .founders-story__title,
+.home-story .founders-story__visual,
+.home-story .founders-story__text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Trigger animations when parent is in view */
+.home-founders.animate-in .founder-profile:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.home-founders.animate-in .founder-profile:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.home-story.animate-in .founders-story__title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.home-story.animate-in .founders-story__visual {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.home-story.animate-in .founders-story__text {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.home-founders__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* Main Container: Flex Column */
+.home-founders__content,
+.home-story__content {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- 1. Profiles Section (Top) --- */
+.founders-profiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.founder-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+}
+
+/* Founder Card (Image) */
+.founder-card {
+  position: relative;
+  border-radius: 300px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 380px;
+}
+
+.founder-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.founder-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Bio Text */
+.founder-mini-bio h3 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.founder-mini-bio p {
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+/* --- 2. Story Section (Bottom) --- */
+.founders-story {
+  display: flex;
+  align-items: stretch;
+  gap: 60px;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sidebar Image */
+.founders-story__sidebar {
+  flex: 0 0 35%;
+  /* 1/3 width approx */
+  position: relative;
+}
+
+.founders-story__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  /* Optional: Soft framing */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Main Content Column */
+.founders-story__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.founders-story__title {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+/* Intro Text Styling */
+.founders-story__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: var(--color-text-dark);
+  line-height: 1.8;
+  text-align: center;
+}
+
+.founders-story__text strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Voyage Visual */
+.founders-story__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.home-founders__voyage img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  filter: invert(1) opacity(0.8);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 968px) {
+  .home-founders {
+    padding: 80px 5%;
+  }
+
+  .founders-profiles {
+    gap: 40px;
+  }
+
+  .founders-story {
+    flex-direction: column-reverse;
+    /* Image on bottom or top? Let's put image on top usually, but strictly sidebar implies side. On mobile, usually image first. */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .founders-story__sidebar {
+    width: 100%;
+    height: 400px;
+    /* Fixed height for mobile image */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .founders-profiles {
+    grid-template-columns: 1fr;
+    /* Stack founders vertically */
+    gap: 60px;
+  }
+
+  .founder-card {
+    max-width: 350px;
+  }
+}
+
+
+
+/* ===== SECTION VISION (NOUVEAU) ===== */
+.home-vision {
+  padding: 100px 5%;
+  background: linear-gradient(135deg, #fdf8f5 0%, #fff 100%);
+
+  /* Initial state for animation */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.home-vision.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Staggered Animations for Vision List --- */
+/* Initial state */
+.home-vision .vision-list li {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  /* Keep hover transition */
+}
+
+/* Trigger animations */
+.home-vision.animate-in .vision-list li:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.home-vision.animate-in .vision-list li:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.home-vision.animate-in .vision-list li:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.home-vision.animate-in .vision-list li:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.home-vision__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.home-vision__content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.vision-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* 2 blocks per row */
+  gap: 40px;
+  list-style: none;
+  padding: 0;
+  perspective: 1000px;
+}
+
+@media screen and (max-width: 600px) {
+  .vision-list {
+    grid-template-columns: 1fr;
+    /* Stack on mobile */
+  }
+}
+
+/* Main Card Container */
+.vision-card {
+  background-color: transparent;
+  width: 100%;
+  height: 400px;
+  /* Fixed height for flip effect */
+  perspective: 1000px;
+}
+
+/* Inner Container - The flipper */
+.vision-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Bouncy smooth transition */
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+}
+
+/* Flip on Hover */
+.vision-card:hover .vision-card__inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back common styles */
+.vision-card__front,
+.vision-card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FRONT FACE */
+.vision-card__front {
+  background-color: #fff;
+  color: black;
+}
+
+.vision-card__front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: transform 0.5s ease;
+}
+
+.vision-card:hover .vision-card__front img {
+  transform: scale(1.1);
+}
+
+.vision-card__front h4 {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
+  /* Legibility overlay */
+  padding: 10px 20px;
+  border-radius: 50px;
+  backdrop-filter: blur(2px);
+  margin: 0;
+}
+
+/* BACK FACE */
+.vision-card__back {
+  background: linear-gradient(135deg, #fff 0%, #fdf8f5 100%);
+  color: var(--color-text-dark);
+  transform: rotateY(180deg);
+  padding: 30px;
+  border: 3px solid var(--color-primary);
+  /* Default border to distinguish */
+}
+
+/* Unique Colors per Card Back */
+.vision-card:nth-child(1) .vision-card__back {
+  border-color: var(--color-primary);
+  /* Pink */
+}
+
+.vision-card:nth-child(2) .vision-card__back {
+  border-color: #f97e07;
+  /* Orange */
+}
+
+.vision-card:nth-child(3) .vision-card__back {
+  border-color: #c4357a;
+  /* Dark Pink */
+}
+
+.vision-card:nth-child(4) .vision-card__back {
+  border-color: #f9a825;
+  /* Gold */
+}
+
+/* Titles matching the border */
+.vision-card:nth-child(1) .vision-card__back h4 {
+  color: var(--color-primary);
+}
+
+.vision-card:nth-child(2) .vision-card__back h4 {
+  color: #f97e07;
+}
+
+.vision-card:nth-child(3) .vision-card__back h4 {
+  color: #c4357a;
+}
+
+.vision-card:nth-child(4) .vision-card__back h4 {
+  color: #f9a825;
+}
+
+.vision-card__back p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Stagger initial state for card */
+.home-vision .vision-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Staggered Entrance */
+.home-vision.animate-in .vision-card:nth-child(1) {
+  transition-delay: 0.1s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-vision.animate-in .vision-card:nth-child(2) {
+  transition-delay: 0.2s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-vision.animate-in .vision-card:nth-child(3) {
+  transition-delay: 0.3s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-vision.animate-in .vision-card:nth-child(4) {
+  transition-delay: 0.4s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Contact Button Container */
+.home-vision__footer {
+  margin-top: 60px;
+  text-align: center;
+  /* Initial hidden state */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
+  /* Delay after cards */
+}
+
+.home-vision.animate-in .home-vision__footer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-contact {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 10px 20px rgba(244, 45, 122, 0.3);
+}
+
+.btn-contact:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(244, 45, 122, 0.4);
+  background-color: #d62d6f;
+  /* Slightly darker pink */
+}
+
+
+
+
+
+/* Responsive Vision */
+@media screen and (max-width: 768px) {
+  .vision-list {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 }

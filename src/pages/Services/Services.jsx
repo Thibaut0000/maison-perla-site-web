@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import Testimonials from '../../components/Testimonials/Testimonials'
 import './Services.css'
 
 function Services() {
@@ -132,65 +133,15 @@ function Services() {
         }
     ]
 
-    // Témoignages clients
-    const testimonials = [
-        {
-            id: 1,
-            name: "Sophie & Thomas",
-            location: "Mariage à Bordeaux",
-            text: "Alessandra et Cristina ont transformé notre vision en réalité. Leur attention aux détails et leur calme le jour J nous ont permis de profiter pleinement de chaque instant. Un immense merci !",
-            avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
-            rating: 5
-        },
-        {
-            id: 2,
-            name: "Marie & Alexandre",
-            location: "Mariage au Château de Vaux",
-            text: "De la papeterie personnalisée à la coordination parfaite, Maison Perla a dépassé toutes nos attentes. Notre mariage était exactement comme nous l'avions rêvé, en mieux !",
-            avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-            rating: 5
-        },
-        {
-            id: 3,
-            name: "Camille & Julien",
-            location: "Mariage en Provence",
-            text: "La formule Perla Blanca nous a libérés de tout stress. Cristina a géré chaque prestataire avec une efficacité remarquable. On recommande les yeux fermés !",
-            avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-            rating: 5
-        },
-        {
-            id: 4,
-            name: "Laura & Maxime",
-            location: "Mariage à Paris",
-            text: "L'équipe a su capturer notre personnalité dans chaque détail. La décoration florale était à couper le souffle. Merci pour cette journée magique !",
-            avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face",
-            rating: 5
-        },
-        {
-            id: 5,
-            name: "Émilie & Pierre",
-            location: "Mariage à Lyon",
-            text: "Nous avons choisi la formule Luz et c'était parfait pour nous. Alessandra nous a aidés à finaliser notre mariage avec une touche d'élégance incomparable.",
-            avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-            rating: 5
-        },
-        {
-            id: 6,
-            name: "Chloé & Antoine",
-            location: "Mariage à Biarritz",
-            text: "La coordination du jour J par l'équipe Brisa était impeccable. Nous avons pu profiter de chaque moment sans nous soucier de rien. Merci infiniment !",
-            avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
-            rating: 5
-        }
-    ]
 
+    //FONCTION INUTILE DEFILEMENT DES TÉMOIGNAGES DANS CSS SANS LIEN AVEC USEEFFECT -> .services-testimonials__track
     // Auto-défilement des témoignages
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
-        }, 5000)
-        return () => clearInterval(interval)
-    }, [testimonials.length])
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
+    //     }, 5000)
+    //     return () => clearInterval(interval)
+    // }, [testimonials.length])
 
     // Animation au scroll
     useEffect(() => {
@@ -230,11 +181,11 @@ function Services() {
                             <span className="services-hero__title-main">Services</span>
                         </h1>
                         <p className="services-hero__description">
-                            Chez <strong>Maison Perla</strong>, nous croyons que chaque mariage est une histoire unique qui mérite d'être racontée avec élégance et authenticité. 
+                            Chez <strong>Maison Perla</strong>, nous croyons que chaque mariage est une histoire unique qui mérite d'être racontée avec élégance et authenticité.
                             Alessandra et Cristina, fondatrices passionnées, vous accompagnent dans la création d'un événement à votre image.
                         </p>
                         <p className="services-hero__description">
-                            De l'<strong>organisation complète</strong> à la <strong>coordination du jour J</strong>, en passant par la <strong>papeterie sur mesure</strong> et la <strong>décoration florale</strong>, 
+                            De l'<strong>organisation complète</strong> à la <strong>coordination du jour J</strong>, en passant par la <strong>papeterie sur mesure</strong> et la <strong>décoration florale</strong>,
                             nous mettons notre expertise et notre sensibilité au service de votre plus beau jour.
                         </p>
                         <div className="services-hero__cta">
@@ -248,9 +199,9 @@ function Services() {
                     </div>
                     <div className="services-hero__image">
                         <div className="services-hero__image-wrapper">
-                            <img 
-                                src="/assets/illustationNosServices1.JPG" 
-                                alt="Maison Perla - Organisation de mariage" 
+                            <img
+                                src="/assets/illustationNosServices1.JPG"
+                                alt="Maison Perla - Organisation de mariage"
                             />
                             <div className="services-hero__image-decoration"></div>
                         </div>
@@ -320,47 +271,7 @@ function Services() {
             </section>
 
             {/* Section 3: Témoignages */}
-            <section className="services-testimonials" ref={addToRefs}>
-                <div className="services-testimonials__background">
-                    <div className="services-testimonials__shape services-testimonials__shape--1"></div>
-                    <div className="services-testimonials__shape services-testimonials__shape--2"></div>
-                </div>
-
-                <div className="services-testimonials__header">
-                    <span className="section-label section-label--light">Ce qu'ils disent de nous</span>
-                    <h2 className="section-title section-title--light">
-                        <span className="section-title__script">Témoignages</span>
-                        <span className="section-title__main">Clients</span>
-                    </h2>
-                </div>
-
-                <div className="services-testimonials__carousel">
-                    <div className="services-testimonials__track">
-                        {/* Dupliquer les témoignages pour l'effet infini */}
-                        {[...testimonials, ...testimonials].map((testimonial, index) => (
-                            <div key={`${testimonial.id}-${index}`} className="testimonial-card">
-                                <div className="testimonial-card__stars">
-                                    {[...Array(testimonial.rating)].map((_, i) => (
-                                        <span key={i}>★</span>
-                                    ))}
-                                </div>
-                                <p className="testimonial-card__text">"{testimonial.text}"</p>
-                                <div className="testimonial-card__author">
-                                    <img 
-                                        src={testimonial.avatar} 
-                                        alt={testimonial.name}
-                                        className="testimonial-card__avatar"
-                                    />
-                                    <div className="testimonial-card__info">
-                                        <span className="testimonial-card__name">{testimonial.name}</span>
-                                        <span className="testimonial-card__location">{testimonial.location}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <Testimonials ref={addToRefs} />
 
             {/* Section 4: Papeterie & Décoration */}
             <section className="services-papeterie" id="papeterie" ref={addToRefs}>
@@ -386,7 +297,7 @@ function Services() {
                             <div className="papeterie-card__number">0{service.id}</div>
                             <h3 className="papeterie-card__title">{service.title}</h3>
                             <p className="papeterie-card__subtitle">{service.subtitle}</p>
-                            
+
                             <div className="papeterie-card__details">
                                 <ul>
                                     {service.details.map((item, index) => (
