@@ -1,7 +1,7 @@
 /* Styles for Testimonials Component */
 .testimonials-section {
     padding: 60px 0;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #c4357a 50%, #f97e07 100%);
+    background: var(--color-primary);
     position: relative;
     overflow: hidden;
     width: 100%;

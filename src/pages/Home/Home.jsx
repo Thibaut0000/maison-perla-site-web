@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import ImageSlider from '../../components/ImageSlider/ImageSlider'
 import Testimonials from '../../components/Testimonials/Testimonials'
 import './Home.css'
@@ -12,10 +13,18 @@ function Home() {
 
   // Images pour le slider
   const sliderImages = [
-    '/assets/photo1.png',
-    '/assets/photo2.png',
-    '/assets/photo3.png',
-    '/assets/photo4.png'
+    '/assets/PhotoSlider1.png',
+    '/assets/PhotoSlider2.png',
+    '/assets/PhotoSlider3.png',
+    '/assets/PhotoSlider4.png',
+    '/assets/PhotoSlider5.png',
+    '/assets/PhotoSlider6.png',
+    '/assets/PhotoSlider7.png',
+    '/assets/PhotoSlider8.png',
+    '/assets/PhotoSlider9.png',
+    '/assets/PhotoSlider10.png',
+    '/assets/PhotoSlider11.png',
+    '/assets/PhotoSlider12.png'
   ]
 
   // Animation au scroll (identique à Services.jsx)
@@ -28,7 +37,7 @@ function Home() {
           }
         })
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     )
 
     sectionsRef.current.forEach((section) => {
@@ -229,9 +238,9 @@ function Home() {
           </ul>
 
           <div className="home-vision__footer">
-            <button className="btn-contact" onClick={() => navigate('/contact')}>
+            <Link to="/contact" className="btn-contact" onClick={() => window.scrollTo(0, 0)}>
               Nous contacter
-            </button>
+            </Link>
           </div>
         </div>
       </section>

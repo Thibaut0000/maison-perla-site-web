@@ -14,7 +14,7 @@ const EMAILJS_CONFIG = {
 function Contact() {
   // Reference vers le formulaire pour EmailJS
   const formRef = useRef(null)
-  
+
   // State pour gerer l'etat du formulaire
   const [formState, setFormState] = useState({
     isSubmitting: false,
@@ -45,7 +45,7 @@ function Contact() {
   // Soumission du formulaire via EmailJS
   const handleSubmit = async (e) => {
     e.preventDefault()
-    
+
     setFormState({
       isSubmitting: true,
       isSuccess: false,
@@ -96,9 +96,9 @@ function Contact() {
     <main className="contact">
       {/* Image de fond decorative */}
       <div className="contact__background">
-        <img 
-          src="/assets/contact-bg.png" 
-          alt="" 
+        <img
+          src="/assets/contact-bg.png"
+          alt=""
           className="contact__background-img"
           aria-hidden="true"
         />
@@ -110,11 +110,11 @@ function Contact() {
         {/* Section titre */}
         <header className="contact__header">
           <h1 className="contact__title">
-            <span className="contact__title-script">Contactez</span>
-            <span className="contact__title-main">Nous</span>
+            <span className="section-title__script">Contactez</span>
+            <span className="section-title__main">Nous</span>
           </h1>
           <p className="contact__intro">
-            Prêtes à transformer votre vision en un événement inoubliable ? 
+            Prêtes à transformer votre vision en un événement inoubliable ?
             Partagez-nous votre projet et commençons cette belle aventure ensemble.
           </p>
         </header>
@@ -124,10 +124,10 @@ function Contact() {
           {/* Formulaire de contact */}
           <section className="contact__form-section">
             <h2 className="contact__section-title">Parlons de votre projet</h2>
-            
-            <form 
-              ref={formRef} 
-              className="contact__form" 
+
+            <form
+              ref={formRef}
+              className="contact__form"
               onSubmit={handleSubmit}
             >
               {/* Nom complet */}
@@ -252,8 +252,8 @@ function Contact() {
               )}
 
               {/* Bouton de soumission */}
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="contact__submit"
                 disabled={formState.isSubmitting}
               >
@@ -274,20 +274,20 @@ function Contact() {
             {/* Carte Alessandra */}
             <div className="contact__card">
               <div className="contact__card-signature">
-                <img 
-                  src="/assets/alessandra-signature.png" 
-                  alt="Alessandra" 
+                <img
+                  src="/assets/alessandra-signature.png"
+                  alt="Alessandra"
                   className="contact__signature-img"
                 />
               </div>
               <div className="contact__card-info">
-                <a 
-                  href="tel:+3315943933" 
+                <a
+                  href="tel:+3315943933"
                   className="contact__phone"
                 >
                   <span className="contact__phone-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
                     </svg>
                   </span>
                   +33 1 59 43 933
@@ -298,20 +298,20 @@ function Contact() {
             {/* Carte Christina */}
             <div className="contact__card">
               <div className="contact__card-signature">
-                <img 
-                  src="/assets/christina-signature.png" 
-                  alt="Christina" 
+                <img
+                  src="/assets/christina-signature.png"
+                  alt="Christina"
                   className="contact__signature-img"
                 />
               </div>
               <div className="contact__card-info">
-                <a 
-                  href="tel:+33619193987" 
+                <a
+                  href="tel:+33619193987"
                   className="contact__phone"
                 >
                   <span className="contact__phone-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
                     </svg>
                   </span>
                   +33 6 19 19 39 87

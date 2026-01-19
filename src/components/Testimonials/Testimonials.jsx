@@ -6,7 +6,7 @@ const Testimonials = forwardRef((props, ref) => {
         {
             id: 1,
             name: "Sophie & Thomas",
-            location: "Mariage à Bordeaux",
+            location: "Mariage à Annecy",
             text: "Alessandra et Cristina ont transformé notre vision en réalité. Leur attention aux détails et leur calme le jour J nous ont permis de profiter pleinement de chaque instant. Un immense merci !",
             avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
             rating: 4
@@ -14,7 +14,7 @@ const Testimonials = forwardRef((props, ref) => {
         {
             id: 2,
             name: "Marie & Alexandre",
-            location: "Mariage au Château de Vaux",
+            location: "Mariage à Annecy",
             text: "De la papeterie personnalisée à la coordination parfaite, Maison Perla a dépassé toutes nos attentes. Notre mariage était exactement comme nous l'avions rêvé, en mieux !",
             avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
             rating: 4
@@ -22,7 +22,7 @@ const Testimonials = forwardRef((props, ref) => {
         {
             id: 3,
             name: "Camille & Julien",
-            location: "Mariage en Provence",
+            location: "Mariage à Talloires",
             text: "La formule Perla Blanca nous a libérés de tout stress. Cristina a géré chaque prestataire avec une efficacité remarquable. On recommande les yeux fermés !",
             avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
             rating: 5
@@ -30,7 +30,7 @@ const Testimonials = forwardRef((props, ref) => {
         {
             id: 4,
             name: "Laura & Maxime",
-            location: "Mariage à Paris",
+            location: "Mariage à Faverges",
             text: "L'équipe a su capturer notre personnalité dans chaque détail. La décoration florale était à couper le souffle. Merci pour cette journée magique !",
             avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face",
             rating: 5
@@ -38,7 +38,7 @@ const Testimonials = forwardRef((props, ref) => {
         {
             id: 5,
             name: "Émilie & Pierre",
-            location: "Mariage à Lyon",
+            location: "Mariage à Liège",
             text: "Nous avons choisi la formule Luz et c'était parfait pour nous. Alessandra nous a aidés à finaliser notre mariage avec une touche d'élégance incomparable.",
             avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
             rating: 5
@@ -46,7 +46,7 @@ const Testimonials = forwardRef((props, ref) => {
         {
             id: 6,
             name: "Chloé & Antoine",
-            location: "Mariage à Biarritz",
+            location: "Mariage à Annecy",
             text: "La coordination du jour J par l'équipe Brisa était impeccable. Nous avons pu profiter de chaque moment sans nous soucier de rien. Merci infiniment !",
             avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
             rating: 4

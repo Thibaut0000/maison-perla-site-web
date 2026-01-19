@@ -177,8 +177,8 @@ function Services() {
                     <div className="services-hero__text">
                         <span className="services-hero__label">Bienvenue chez Maison Perla</span>
                         <h1 className="services-hero__title">
-                            <span className="services-hero__title-script">Nos</span>
-                            <span className="services-hero__title-main">Services</span>
+                            <span className="section-title__script">Nos</span>
+                            <span className="section-title__main">Services</span>
                         </h1>
                         <p className="services-hero__description">
                             Chez <strong>Maison Perla</strong>, nous croyons que chaque mariage est une histoire unique qui mérite d'être racontée avec élégance et authenticité.
@@ -320,13 +320,13 @@ function Services() {
                 {/* Galerie d'images suggestion */}
                 <div className="services-papeterie__gallery">
                     <div className="gallery-placeholder" data-text="📷 Galerie photos papeterie suggérée">
-                        {/* Ajouter des images de papeterie ici */}
+                        <img src="" alt="Galerie photos papeterie" />
                     </div>
                     <div className="gallery-placeholder" data-text="📷 Photo décoration table">
-                        {/* Ajouter des images ici */}
+                        <img src="" alt="Photo décoration table" />
                     </div>
                     <div className="gallery-placeholder" data-text="📷 Photo accessoires">
-                        {/* Ajouter des images ici */}
+                        <img src="" alt="Photo accessoires" />
                     </div>
                 </div>
             </section>
@@ -340,7 +340,7 @@ function Services() {
                     <p className="services-cta__text">
                         Contactez-nous pour un premier échange sans engagement. Nous serons ravies de découvrir votre projet.
                     </p>
-                    <Link to="/contact" className="services-cta__btn">
+                    <Link to="/contact" className="services-cta__btn" onClick={() => window.scrollTo(0, 0)}>
                         Nous contacter
                         <span className="services-cta__btn-arrow">→</span>
                     </Link>

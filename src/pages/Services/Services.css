@@ -97,80 +97,7 @@
     transform: translateY(0);
 }
 
-/* ===== LABELS & TITRES COMMUNS ===== */
-.section-label {
-    display: inline-block;
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-    position: relative;
-    padding-left: 50px;
-}
 
-.section-label::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 35px;
-    height: 2px;
-    background: var(--color-primary);
-    transform: translateY(-50%);
-}
-
-.section-label--light {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.section-label--light::before {
-    background: rgba(255, 255, 255, 0.7);
-}
-
-.section-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-
-.section-title__script {
-    font-family: var(--font-script);
-    font-size: 3rem;
-    font-weight: 400;
-    color: var(--color-primary);
-    line-height: 1;
-}
-
-.section-title__main {
-    font-family: var(--font-serif);
-    font-size: 4rem;
-    font-weight: 500;
-    color: var(--color-text-dark);
-    line-height: 1;
-    margin-top: -0.3rem;
-}
-
-.section-title--light .section-title__script {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.section-title--light .section-title__main {
-    color: #fff;
-}
-
-.section-description {
-    font-family: var(--font-sans);
-    font-size: 1.1rem;
-    color: var(--color-text-light);
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 1.8;
-}
 
 /* ===== SECTION 1: HERO ===== */
 .services-hero {
@@ -214,6 +141,8 @@
 
 .services-hero__title {
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .services-hero__title-script {
@@ -234,6 +163,8 @@
     line-height: 1;
     margin-top: -0.3rem;
 }
+
+
 
 .services-hero__description {
     font-family: var(--font-sans);
@@ -337,6 +268,8 @@
     animation: pulse 1.5s ease-in-out infinite;
 }
 
+
+
 /* ===== SECTION 2: FORMULES ===== */
 .services-formules {
     padding: var(--section-padding);
@@ -396,8 +329,9 @@
 .formule-panel__header {
     display: flex;
     align-items: center;
-    gap: 25px;
-    padding: 30px 100px 30px 40px;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 30px 40px;
     position: relative;
     z-index: 1;
 }
@@ -425,6 +359,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-left: auto;
+    margin-right: 50px;
     max-width: 200px;
     text-align: right;
 }
@@ -648,7 +583,7 @@
 }
 
 .papeterie-card.active .papeterie-card__details {
-    max-height: 300px;
+    max-height: 400px;
     opacity: 1;
     margin-top: 1.5rem;
 }
@@ -839,6 +774,8 @@
     .services-testimonials__nav--next {
         right: 10px;
     }
+
+
 }
 
 @media (max-width: 992px) {
@@ -863,7 +800,39 @@
     .services-hero__title-main {
         font-size: 4rem;
     }
+}
 
+@media (max-width: 768px) {
+    .formule-panel__header {
+        padding: 20px;
+    }
+
+    .formule-panel__number {
+        font-size: 2rem;
+    }
+
+    .formule-panel__title {
+        font-size: 1.5rem;
+    }
+
+    .formule-panel__subtitle {
+        font-size: 0.8rem;
+        max-width: none;
+        width: 100%;
+        text-align: left;
+        margin-top: 5px;
+    }
+
+    .formule-panel__expand-icon {
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 992px) {
     .formule-panel__content {
         grid-template-columns: 1fr;
     }

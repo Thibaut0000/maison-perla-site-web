@@ -104,3 +104,85 @@ button {
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
+
+/* ===== COMPOSANTS GLOBAUX PARTAGÉS ===== */
+
+/* --- LABELS DE SECTION --- */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 50px;
+}
+
+.section-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 35px;
+  height: 2px;
+  background: var(--color-primary);
+  transform: translateY(-50%);
+}
+
+.section-label--light {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.section-label--light::before {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* --- TITRES DE SECTION --- */
+.section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-title__script {
+  font-family: var(--font-serif);
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.section-title__main {
+  font-family: var(--font-serif);
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  line-height: 1;
+  margin-top: -0.3rem;
+}
+
+.section-title--light .section-title__script {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.section-title--light .section-title__main {
+  color: #fff;
+}
+
+/* --- DESCRIPTION DE SECTION --- */
+.section-description {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.8;
+}
