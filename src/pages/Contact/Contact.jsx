@@ -3,11 +3,11 @@ import emailjs from '@emailjs/browser'
 import SocialLinks from '../../components/SocialLinks/SocialLinks'
 import './Contact.css'
 
-// Configuration EmailJS via variables d'environnement Vite
+// Configuration EmailJS (clés publiques - sécurisées côté client)
 const EMAILJS_CONFIG = {
-  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
-  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
-  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
+  serviceId: 'service_ushtpcm',
+  templateId: 'template_adxlffs',
+  publicKey: 'GGhmt4y3zrMAItypD'
 }
 
 // Page de contact avec formulaire EmailJS et informations des wedding planners
