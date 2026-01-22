@@ -55,8 +55,10 @@ function Home() {
   }
 
   // Gestion du flip des cartes vision sur mobile (clic au lieu de hover)
-  const handleCardClick = (cardIndex) => {
-    setFlippedCard(flippedCard === cardIndex ? null : cardIndex)
+  const handleCardClick = (e, cardIndex) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setFlippedCard(prevFlipped => prevFlipped === cardIndex ? null : cardIndex)
   }
 
 
@@ -197,7 +199,7 @@ function Home() {
 
         <div className="home-vision__content">
           <ul className="vision-list">
-            <li className={`vision-card ${flippedCard === 0 ? 'flipped' : ''}`} onClick={() => handleCardClick(0)}>
+            <li className={`vision-card ${flippedCard === 0 ? 'flipped' : ''}`} onClick={(e) => handleCardClick(e, 0)}>
               <div className="vision-card__inner">
                 <div className="vision-card__front">
                   <img src="/assets/Luz2.JPG" alt="Créer ensemble" loading="lazy" />
@@ -209,7 +211,7 @@ function Home() {
                 </div>
               </div>
             </li>
-            <li className={`vision-card ${flippedCard === 1 ? 'flipped' : ''}`} onClick={() => handleCardClick(1)}>
+            <li className={`vision-card ${flippedCard === 1 ? 'flipped' : ''}`} onClick={(e) => handleCardClick(e, 1)}>
               <div className="vision-card__inner">
                 <div className="vision-card__front">
                   <img src="/assets/jardin.png" alt="Professionnalisme" loading="lazy" />
@@ -221,7 +223,7 @@ function Home() {
                 </div>
               </div>
             </li>
-            <li className={`vision-card ${flippedCard === 2 ? "flipped" : ""}`} onClick={() => handleCardClick(2)}>
+            <li className={`vision-card ${flippedCard === 2 ? "flipped" : ""}`} onClick={(e) => handleCardClick(e, 2)}>
               <div className="vision-card__inner">
                 <div className="vision-card__front">
                   <img src="/assets/Brisa1.JPG" alt="Authenticité" loading="lazy" />
@@ -233,7 +235,7 @@ function Home() {
                 </div>
               </div>
             </li>
-            <li className={`vision-card ${flippedCard === 3 ? "flipped" : ""}`} onClick={() => handleCardClick(3)}>
+            <li className={`vision-card ${flippedCard === 3 ? "flipped" : ""}`} onClick={(e) => handleCardClick(e, 3)}>
               <div className="vision-card__inner">
                 <div className="vision-card__front">
                   <img src="/assets/banquet.png" alt="Exigence du beau" loading="lazy" />
