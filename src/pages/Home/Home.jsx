@@ -142,7 +142,7 @@ function Home() {
           <div className="founders-story">
             {/* Sidebar Image */}
             <div className="founders-story__sidebar">
-              <img src="/assets/Plage.png" alt="Notre Histoire" className="founders-story__image" />
+              <img src="/assets/Plage.png" alt="Notre Histoire" className="founders-story__image" loading="lazy" />
 
               {/* Slider d'images */}
               <ImageSlider images={sliderImages} />
@@ -200,7 +200,7 @@ function Home() {
             <li className={`vision-card ${flippedCard === 0 ? 'flipped' : ''}`} onClick={() => handleCardClick(0)}>
               <div className="vision-card__inner">
                 <div className="vision-card__front">
-                  <img src="/assets/Luz2.JPG" alt="Créer ensemble" />
+                  <img src="/assets/Luz2.JPG" alt="Créer ensemble" loading="lazy" />
                   <h4>Créer ensemble, avec le cœur</h4>
                 </div>
                 <div className="vision-card__back">
@@ -212,7 +212,7 @@ function Home() {
             <li className={`vision-card ${flippedCard === 1 ? 'flipped' : ''}`} onClick={() => handleCardClick(1)}>
               <div className="vision-card__inner">
                 <div className="vision-card__front">
-                  <img src="/assets/jardin.png" alt="Professionnalisme" />
+                  <img src="/assets/jardin.png" alt="Professionnalisme" loading="lazy" />
                   <h4>Allier professionnalisme et bonne humeur</h4>
                 </div>
                 <div className="vision-card__back">
@@ -224,7 +224,7 @@ function Home() {
             <li className={`vision-card ${flippedCard === 2 ? "flipped" : ""}`} onClick={() => handleCardClick(2)}>
               <div className="vision-card__inner">
                 <div className="vision-card__front">
-                  <img src="/assets/Brisa1.JPG" alt="Authenticité" />
+                  <img src="/assets/Brisa1.JPG" alt="Authenticité" loading="lazy" />
                   <h4>Célébrer l’authenticité</h4>
                 </div>
                 <div className="vision-card__back">
@@ -236,7 +236,7 @@ function Home() {
             <li className={`vision-card ${flippedCard === 3 ? "flipped" : ""}`} onClick={() => handleCardClick(3)}>
               <div className="vision-card__inner">
                 <div className="vision-card__front">
-                  <img src="/assets/banquet.png" alt="Exigence du beau" />
+                  <img src="/assets/banquet.png" alt="Exigence du beau" loading="lazy" />
                   <h4>Partager la même exigence du beau</h4>
                 </div>
                 <div className="vision-card__back">

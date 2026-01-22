@@ -3,11 +3,11 @@ import emailjs from '@emailjs/browser'
 import SocialLinks from '../../components/SocialLinks/SocialLinks'
 import './Contact.css'
 
-// Configuration EmailJS - A remplacer par vos cles
+// Configuration EmailJS via variables d'environnement Vite
 const EMAILJS_CONFIG = {
-  serviceId: 'YOUR_SERVICE_ID',      // Remplacer par votre Service ID
-  templateId: 'YOUR_TEMPLATE_ID',    // Remplacer par votre Template ID
-  publicKey: 'YOUR_PUBLIC_KEY'       // Remplacer par votre Public Key
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
 }
 
 // Page de contact avec formulaire EmailJS et informations des wedding planners
@@ -88,7 +88,10 @@ function Contact() {
         isError: true,
         errorMessage: 'Une erreur est survenue. Veuillez réessayer ou nous contacter directement par téléphone.'
       })
-      console.error('Erreur EmailJS:', error)
+      // Log uniquement en développement
+      if (import.meta.env.DEV) {
+        console.error('Erreur EmailJS:', error)
+      }
     }
   }
 
