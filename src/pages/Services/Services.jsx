@@ -263,9 +263,8 @@ function Services() {
 
                 {/* Placeholder pour image supplémentaire */}
                 <div className="services-formules__image-banner">
-                    <div className="image-placeholder" data-text="📷 Image décorative suggérée ici">
-                        {/* Ajouter une image panoramique de mariage ici */}
-                        {/* <img src="/assets/votre-image.jpg" alt="Décoration mariage" /> */}
+                    <div className="image-placeholder">
+                        <img src="/assets/imageLarge4.jpg" alt="Décoration mariage" />
                     </div>
                 </div>
             </section>
@@ -319,14 +318,14 @@ function Services() {
 
                 {/* Galerie d'images suggestion */}
                 <div className="services-papeterie__gallery">
-                    <div className="gallery-placeholder" data-text="📷 Galerie photos papeterie suggérée">
-                        <img src="" alt="Galerie photos papeterie" />
+                    <div className="gallery-placeholder">
+                        <img src="/assets/papeterieMariage.jpg" alt="Galerie photos papeterie" />
                     </div>
-                    <div className="gallery-placeholder" data-text="📷 Photo décoration table">
-                        <img src="" alt="Photo décoration table" />
+                    <div className="gallery-placeholder">
+                        <img src="/assets/decorationMariage.jpg" alt="Photo décoration table" />
                     </div>
-                    <div className="gallery-placeholder" data-text="📷 Photo accessoires">
-                        <img src="" alt="Photo accessoires" />
+                    <div className="gallery-placeholder">
+                        <img src="/assets/accessoiresMariage.jpg" alt="Photo accessoires" />
                     </div>
                 </div>
             </section>
@@ -334,14 +333,15 @@ function Services() {
             {/* Section 5: Call to Action */}
             <section className="services-cta" ref={addToRefs}>
                 <div className="services-cta__content">
-                    <h2 className="services-cta__title">
-                        Prêts à créer <span>votre mariage de rêve</span> ?
+                    <h2 className="section-title">
+                        <span className="section-title__script">Prêts à créer</span>
+                        <span className="section-title__main">votre mariage de rêve ?</span>
                     </h2>
                     <p className="services-cta__text">
-                        Contactez-nous pour un premier échange sans engagement. Nous serons ravies de découvrir votre projet.
+                        Contactez-nous pour un premier échange sans engagement. Nous serons ravies de découvrir votre projet et de vous accompagner dans cette belle aventure.
                     </p>
                     <Link to="/contact" className="services-cta__btn" onClick={() => window.scrollTo(0, 0)}>
-                        Nous contacter
+                        Prendre rendez-vous
                         <span className="services-cta__btn-arrow">→</span>
                     </Link>
                 </div>

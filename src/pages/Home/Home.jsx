@@ -86,6 +86,11 @@ function Home() {
             />
           </div>
         </div>
+
+        {/* Flèche de scroll */}
+        <div className="hero__scroll-indicator">
+          <span className="hero__scroll-arrow">↓</span>
+        </div>
       </section>
 
       {/* Section Présentation des Créatrices */}
