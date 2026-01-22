@@ -5,6 +5,8 @@
     padding: var(--spacing-xl) 0 var(--spacing-md);
     margin-top: auto;
     border-top: 1px solid rgba(168, 10, 71, 0.1);
+    z-index: 2;
+    position: relative;
 }
 
 .footer__container {

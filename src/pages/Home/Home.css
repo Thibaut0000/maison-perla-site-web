@@ -753,6 +753,16 @@
   /* Slightly darker pink */
 }
 
+.btn-contact-arrow {
+  transition: transform 0.3s ease;
+  display: inline-block;
+  padding-left: 1rem;
+}
+
+.btn-contact:hover .btn-contact-arrow {
+  transform: translateX(5px);
+}
+
 
 
 

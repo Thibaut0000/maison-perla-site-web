@@ -240,6 +240,7 @@ function Home() {
           <div className="home-vision__footer">
             <Link to="/contact" className="btn-contact" onClick={() => window.scrollTo(0, 0)}>
               Nous contacter
+              <span className="btn-contact-arrow">→</span>
             </Link>
           </div>
         </div>
