@@ -672,6 +672,7 @@
   width: 100%;
   height: 400px;
   /* Fixed height for flip effect */
+  -webkit-perspective: 1000px;
   perspective: 1000px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -684,6 +685,7 @@
   height: 100%;
   text-align: center;
   transition: transform 0.6s ease;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border-radius: 20px;
@@ -708,7 +710,6 @@
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
-  /* Safari */
   backface-visibility: hidden;
   border-radius: 20px;
   overflow: hidden;
@@ -722,6 +723,9 @@
 .vision-card__front {
   background-color: #fff;
   color: black;
+  z-index: 2;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 
 .vision-card__front img {
@@ -758,10 +762,11 @@
 .vision-card__back {
   background: linear-gradient(135deg, #fff 0%, #fdf8f5 100%);
   color: var(--color-text-dark);
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   padding: 30px;
   border: 3px solid var(--color-primary);
-  /* Default border to distinguish */
+  z-index: 1;
 }
 
 /* Unique Colors per Card Back */
