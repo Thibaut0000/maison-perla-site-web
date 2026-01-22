@@ -499,11 +499,91 @@
   .founders-profiles {
     grid-template-columns: 1fr;
     /* Stack founders vertically */
-    gap: 60px;
+    gap: 40px;
   }
 
   .founder-card {
-    max-width: 350px;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .home-founders {
+    padding: 60px 20px;
+  }
+
+  .home-founders__header {
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+
+  .home-founders__header .section-label {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+  }
+
+  .home-founders__header .section-label::before {
+    display: none;
+  }
+
+  .home-founders__header .section-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .founder-profile {
+    align-items: center;
+  }
+
+  .founder-mini-bio {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .founder-mini-bio h3 {
+    font-size: 1.5rem;
+  }
+
+  .founder-mini-bio p {
+    font-size: 0.95rem;
+  }
+
+  /* Section Histoire */
+  .home-story {
+    padding: 60px 20px;
+  }
+
+  .founders-story {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .founders-story__sidebar {
+    width: 100%;
+    order: 1;
+  }
+
+  .founders-story__main {
+    width: 100%;
+    order: 2;
+  }
+
+  .founders-story__text {
+    text-align: center;
+  }
+
+  .founders-story__text p {
+    font-size: 0.95rem;
+  }
+
+  .home-founders__voyage {
+    max-width: 250px;
+    margin: 0 auto;
   }
 }
 
@@ -795,8 +875,114 @@
 
 /* Responsive Vision */
 @media screen and (max-width: 768px) {
+  .home-vision {
+    padding: 60px 20px;
+  }
+
+  .home-vision__header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .home-vision__header .section-label {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+  }
+
+  .home-vision__header .section-label::before {
+    display: none;
+  }
+
+  .home-vision__header .section-title {
+    align-items: center;
+    text-align: center;
+  }
+
   .vision-list {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 25px;
+    padding: 0 10px;
+  }
+
+  .vision-card {
+    height: 280px;
+  }
+
+  /* Désactiver le flip au hover sur mobile */
+  .vision-card:hover .vision-card__inner {
+    transform: none;
+  }
+
+  /* Activer le flip au clic/touch via la classe .flipped */
+  .vision-card.flipped .vision-card__inner {
+    transform: rotateY(180deg);
+  }
+
+  .vision-card__front h4 {
+    font-size: 1.1rem;
+    padding: 8px 14px;
+  }
+
+  .vision-card__back {
+    padding: 18px;
+  }
+
+  .vision-card__back h4 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .vision-card__back p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .home-vision__footer {
+    margin-top: 35px;
+  }
+
+  .btn-contact {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+}
+
+/* Responsive très petit écran */
+@media screen and (max-width: 480px) {
+  .hero__logo-img {
+    width: 250px;
+  }
+
+  .hero__scroll-arrow {
+    font-size: 1.5rem;
+  }
+
+  .founder-card {
+    max-width: 220px;
+  }
+
+  .vision-card {
+    height: 260px;
+  }
+
+  .vision-card__front h4 {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+
+  .vision-card__back {
+    padding: 15px;
+  }
+
+  .vision-card__back h4 {
+    font-size: 1.1rem;
+  }
+
+  .vision-card__back p {
+    font-size: 0.8rem;
   }
 }

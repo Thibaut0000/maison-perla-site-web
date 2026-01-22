@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import ImageSlider from '../../components/ImageSlider/ImageSlider'
@@ -10,6 +10,7 @@ import './Home.css'
 function Home() {
   const sectionsRef = useRef([])
   const navigate = useNavigate()
+  const [flippedCard, setFlippedCard] = useState(null)
 
   // Images pour le slider
   const sliderImages = [
@@ -53,6 +54,10 @@ function Home() {
     }
   }
 
+  // Gestion du flip des cartes vision sur mobile (clic au lieu de hover)
+  const handleCardClick = (cardIndex) => {
+    setFlippedCard(flippedCard === cardIndex ? null : cardIndex)
+  }
 
 
   return (
@@ -192,7 +197,7 @@ function Home() {
 
         <div className="home-vision__content">
           <ul className="vision-list">
-            <li className="vision-card">
+            <li className={`vision-card ${flippedCard === 0 ? 'flipped' : ''}`} onClick={() => handleCardClick(0)}>
               <div className="vision-card__inner">
                 <div className="vision-card__front">
                   <img src="/assets/Luz2.JPG" alt="Créer ensemble" />
@@ -204,7 +209,7 @@ function Home() {
                 </div>
               </div>
             </li>
-            <li className="vision-card">
+            <li className={`vision-card ${flippedCard === 1 ? 'flipped' : ''}`} onClick={() => handleCardClick(1)}>
               <div className="vision-card__inner">
                 <div className="vision-card__front">
                   <img src="/assets/jardin.png" alt="Professionnalisme" />
@@ -216,7 +221,7 @@ function Home() {
                 </div>
               </div>
             </li>
-            <li className="vision-card">
+            <li className={`vision-card ${flippedCard === 2 ? "flipped" : ""}`} onClick={() => handleCardClick(2)}>
               <div className="vision-card__inner">
                 <div className="vision-card__front">
                   <img src="/assets/Brisa1.JPG" alt="Authenticité" />
@@ -228,7 +233,7 @@ function Home() {
                 </div>
               </div>
             </li>
-            <li className="vision-card">
+            <li className={`vision-card ${flippedCard === 3 ? "flipped" : ""}`} onClick={() => handleCardClick(3)}>
               <div className="vision-card__inner">
                 <div className="vision-card__front">
                   <img src="/assets/banquet.png" alt="Exigence du beau" />
@@ -254,3 +259,4 @@ function Home() {
 }
 
 export default Home
+

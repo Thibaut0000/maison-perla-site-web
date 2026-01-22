@@ -875,23 +875,75 @@
 
 @media (max-width: 768px) {
     .services-page {
-        --section-padding: 60px 5%;
+        --section-padding: 60px 20px;
+    }
+
+    /* Headers centrés sur mobile */
+    .services-formules__header,
+    .services-papeterie__header,
+    .services-hero__text {
+        text-align: center;
+    }
+
+    .services-formules__header .section-label,
+    .services-papeterie__header .section-label {
+        display: block;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+    }
+
+    .services-formules__header .section-label::before,
+    .services-papeterie__header .section-label::before {
+        display: none;
+    }
+
+    .services-formules__header .section-title,
+    .services-papeterie__header .section-title {
+        align-items: center;
     }
 
     .section-title__main {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .section-title__script {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .services-hero {
+        padding: 80px 20px 60px;
+    }
+
+    .services-hero__content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .services-hero__image {
+        order: -1;
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     .services-hero__title-script {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .services-hero__title-main {
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+
+    .services-hero__description {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .services-hero__cta {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     .services-hero__scroll-indicator {
@@ -936,8 +988,38 @@
         padding: 30px 20px;
     }
 
-    .services-cta__title {
+    .services-cta {
+        padding: 60px 20px;
+    }
+
+    .services-cta .section-title {
+        align-items: center;
+    }
+
+    .services-cta .section-title__script {
         font-size: 2rem;
+    }
+
+    .services-cta .section-title__main {
+        font-size: 1.5rem;
+    }
+
+    .services-cta__text {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .services-cta__btn {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+
+    .gallery-placeholder {
+        height: 200px;
+    }
+
+    .image-placeholder {
+        height: 150px;
     }
 }
 
@@ -948,7 +1030,11 @@
     }
 
     .formule-panel__content {
-        padding: 0 20px 20px;
+        padding: 0 15px 15px;
+    }
+
+    .formule-panel__list li {
+        font-size: 0.85rem;
     }
 
     .section-label {
@@ -959,5 +1045,25 @@
 
     .section-label::before {
         display: none;
+    }
+
+    .services-hero__title-script {
+        font-size: 1.8rem;
+    }
+
+    .services-hero__title-main {
+        font-size: 2rem;
+    }
+
+    .services-hero__image {
+        max-width: 250px;
+    }
+
+    .papeterie-card__title {
+        font-size: 1.3rem;
+    }
+
+    .papeterie-card__subtitle {
+        font-size: 0.85rem;
     }
 }
