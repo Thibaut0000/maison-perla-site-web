@@ -673,6 +673,8 @@
   height: 400px;
   /* Fixed height for flip effect */
   perspective: 1000px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Inner Container - The flipper */
@@ -909,16 +911,24 @@
 
   .vision-card {
     height: 280px;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  /* Désactiver le flip au hover sur mobile */
+  /* Désactiver complètement le hover sur mobile */
   .vision-card:hover .vision-card__inner {
-    transform: none;
+    transform: none !important;
   }
 
-  /* Activer le flip au clic/touch via la classe .flipped */
+  /* Désactiver le zoom de l'image au hover sur mobile */
+  .vision-card:hover .vision-card__front img {
+    transform: none !important;
+  }
+
+  /* Activer le flip uniquement via la classe .flipped (clic) */
   .vision-card.flipped .vision-card__inner {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) !important;
   }
 
   .vision-card__front h4 {
