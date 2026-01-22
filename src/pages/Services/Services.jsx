@@ -263,13 +263,8 @@ function Services() {
 
                 {/* Placeholder pour image supplémentaire */}
                 <div className="services-formules__image-banner">
-<<<<<<< HEAD
-                    <div className="image-placeholder" data-text="📷 Image décorative suggérée ici">
-                        <img src="/assets/PhotoService2.png" alt="Décoration mariage" />
-=======
                     <div className="image-placeholder">
                         <img src="/assets/imageLarge4.jpg" alt="Décoration mariage" />
->>>>>>> 535f5d29ad52f635815dade4fcd05ff55e81d931
                     </div>
                 </div>
             </section>
@@ -323,16 +318,6 @@ function Services() {
 
                 {/* Galerie d'images suggestion */}
                 <div className="services-papeterie__gallery">
-<<<<<<< HEAD
-                    <div className="gallery-placeholder" data-text="📷 Galerie photos papeterie suggérée">
-                        <img src="assets/PhotoService2.png" alt="Galerie photos papeterie" />
-                    </div>
-                    <div className="gallery-placeholder" data-text="📷 Photo décoration table">
-                        <img src="assets/PhotoService2.png" alt="Photo décoration table" />
-                    </div>
-                    <div className="gallery-placeholder" data-text="📷 Photo accessoires">
-                        <img src="assets/PhotoService2.png" alt="Photo accessoires" />
-=======
                     <div className="gallery-placeholder">
                         <img src="/assets/papeterieMariage.jpg" alt="Galerie photos papeterie" />
                     </div>
@@ -341,7 +326,6 @@ function Services() {
                     </div>
                     <div className="gallery-placeholder">
                         <img src="/assets/accessoiresMariage.jpg" alt="Photo accessoires" />
->>>>>>> 535f5d29ad52f635815dade4fcd05ff55e81d931
                     </div>
                 </div>
             </section>
