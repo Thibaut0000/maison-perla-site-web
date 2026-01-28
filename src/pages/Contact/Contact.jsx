@@ -5,9 +5,9 @@ import './Contact.css'
 
 // Configuration EmailJS (clés publiques - sécurisées côté client)
 const EMAILJS_CONFIG = {
-  serviceId: 'service_ushtpcm',
+  serviceId: 'service_va1lvnk',
   templateId: 'template_adxlffs',
-  publicKey: 'GGhmt4y3zrMAItypD'
+  publicKey: 'GGhmt4y3zrMAltypD'
 }
 
 // Page de contact avec formulaire EmailJS et informations des wedding planners
