@@ -1,11 +1,11 @@
 # Robots.txt pour Maison Perla
-# https://www.maisonperla.fr/
+# https://maisonperlaevents.fr/
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.maisonperla.fr/sitemap.xml
+Sitemap: https://maisonperlaevents.fr/sitemap.xml
 
 # Désactiver l'indexation des fichiers statiques non essentiels
 Disallow: /assets/*.mp4
