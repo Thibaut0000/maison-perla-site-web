@@ -868,6 +868,24 @@
         margin-top: 10px;
     }
 
+    .formule-panel__image {
+        width: 100%;
+        height: 250px;
+        border-radius: 12px;
+        margin-top: 20px;
+    }
+
+    .formule-panel__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .formule-panel.active .formule-panel__content {
+        max-height: 1200px;
+    }
+
     .services-papeterie__gallery {
         grid-template-columns: 1fr;
     }
@@ -1031,6 +1049,11 @@
 
     .formule-panel__content {
         padding: 0 15px 15px;
+    }
+
+    .formule-panel__image {
+        height: 200px;
+        margin-top: 15px;
     }
 
     .formule-panel__list li {
